@@ -3,6 +3,10 @@ package com.loukmane.algorithmpractice.classes;
 import java.util.ArrayList;
 
 import com.loukmane.algorithmpractice.numeric.NumericAlgos;
+import com.loukmane.algorithmpractice.search.SearchAlgos;
+import com.loukmane.algorithmpractice.sort.SortAlgos;
+
+import jdk.nashorn.internal.runtime.regexp.joni.SearchAlgorithm;
 
 public class Main {
 
@@ -18,14 +22,20 @@ public class Main {
 		myList.add(50);
 		myList.add(2);
 		
-		int[] test = {3, 5, 1, 2, 10, 50, 2};
         MergeSort mms = new MergeSort();
         mms.sort(test);
         for(int i : test){
             System.out.print(i);
             System.out.print(" ");*/	
 //        }
+
+		int[] test = {3, 2, 1, 23, 5, 16, 7, 1, 2056, 56, 87, 10, 55, 2056};
 		
-		System.out.println(NumericAlgos.factorial(12));
+		int [] testSorted = SortAlgos.selectionSort(test);
+		
+		for(int i = 0; i<testSorted.length; i++){
+			System.out.print(testSorted[i] + ", ");
+		}
+		
 	}
 }
