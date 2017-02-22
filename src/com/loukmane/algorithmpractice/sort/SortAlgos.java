@@ -19,4 +19,24 @@ public class SortAlgos {
 		return nonSortedArray;
 	}
 	
+	public static int[] insertionSort(int[] nonSortedArray){
+		int start = 0;
+		int posExplored = 1;
+		while(posExplored < nonSortedArray.length){
+			for(int i = start; i>=0; i--)
+			{
+				if(nonSortedArray[posExplored] < nonSortedArray[i]){
+					int temp = nonSortedArray[i];
+					nonSortedArray[i] = nonSortedArray[posExplored];
+					nonSortedArray[posExplored] = temp;
+					posExplored = i; 
+				}
+				else
+					break;
+			}
+			start++;
+			posExplored=start+1;
+		}
+		return nonSortedArray;
+	}
 }

@@ -31,7 +31,7 @@ public class Main {
 
 		int[] test = {3, 2, 1, 23, 5, 16, 7, 1, 2056, 56, 87, 10, 55, 2056};
 		
-		int [] testSorted = SortAlgos.selectionSort(test);
+		int [] testSorted = SortAlgos.insertionSort(test);
 		
 		for(int i = 0; i<testSorted.length; i++){
 			System.out.print(testSorted[i] + ", ");
