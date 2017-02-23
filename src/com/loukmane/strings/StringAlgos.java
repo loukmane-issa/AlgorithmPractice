@@ -1,5 +1,7 @@
 package com.loukmane.strings;
 
+import java.util.HashMap;
+
 public class StringAlgos {
 
 	
@@ -17,7 +19,49 @@ public class StringAlgos {
 	}
 	
 	
+	public static Boolean uniqueChar(String str_s){
+		str_s = str_s.replaceAll("[^a-zA-Z]", "");
+		str_s = str_s.replaceAll("\\s+", "");
+		str_s = str_s.toUpperCase();
+		char[] str = str_s.toCharArray();
+		HashMap<Character, Integer> charNbIter = new HashMap<Character, Integer>();
+		
+		for(int i = 0; i < str.length; i++){
+			if(charNbIter.containsKey(str[i]))
+				return false;
+			else
+				charNbIter.put(str[i], 1);
+		}
+		
+		return true;
+	}
 	
+	public static char[] spacetoPercentTwenty(String str_st){
+		char[] str_s = str_st.toCharArray();
+		int length = str_s.length;
+		int spaceCount = 0;
+		
+		for(int i = 0; i<str_s.length; i++){
+			if(str_s[i] == ' ')
+				spaceCount++;
+		}
+		
+		int newLength = (spaceCount * 2) + str_s.length;
+		
+		char[] str = new char[newLength];
+		int writerPos = 0;
+		
+		for(int i = 0; i<str_s.length; i++){
+			if(str_s[i] == ' '){
+				str[writerPos++] = '%';
+				str[writerPos++] = '2';
+				str[writerPos++] = '0';
+			}
+			else
+				str[writerPos++] = str_s[i];
+		}		
+		return str;
+	}
 
 	
 	//This function reverseString and also remove unused whitespace :)
